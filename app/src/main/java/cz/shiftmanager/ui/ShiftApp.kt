@@ -69,9 +69,9 @@ fun ShiftApp() {
     val snackbar = remember { SnackbarHostState() }
 
     // Wait for stored settings instead of rendering editable defaults.
-    val settings by storage.settings.collectAsState<PaySettings?>(
-        initial = null
-    )
+    val settings by storage.settings.collectAsState<PaySettings, PaySettings?>(
+    initial = null
+)
     val entries by storage.entries.collectAsState(
         initial = emptyList()
     )
